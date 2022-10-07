@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  
+}
+
+body {
+  padding: 40px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url('/img/fono.png');
+  background-size: cover;
+}
+
+a {
+  color: #e73a58;
+  font-size: 20px;
+  font-weight: 400;
+  text-decoration: none;
+
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+figure {
+  width: 20%;
+}
+.titulo_general{
+
+  width: 100%;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-weight: normal;
+  margin: 20px 0;
+  font-size: 30px;
+  text-shadow: 4px 4px 5px #0005;
+}
+
+/* botones */
+.button_general {
+  margin-top:20px;
+  border: solid 2px #e73a58;
+  background: transparent;
+  width: 30%; 
+  text-align: center;
+  padding: 10px;
+  font-size: 20px;
+  color: #e73a58 ;
+}
+.button_general:hover {
+  border: solid 5px #fff;
+  color: #fff ;
+} 
+
+/* enlaces */
+
+
+/* formularios */
+.formulario_general{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 80%;
+  margin: 30px;
+  padding: 30px;
+  flex-wrap: wrap;
+  align-content: stretch;
+  justify-content: center;
+  align-items: stretch;
+}
+ 
+
+.formulario_general input{
+  width: 80%;
+  height: 41px;
+  margin-bottom: 30px;
+  border: none;
+  border-radius: 30px;
+  padding: 10px;
+  background-color: #4645439c;
+}
+.formulario_general input::placeholder{
+  color: #fff;
+  font-size: 15px;
+  
+}
+

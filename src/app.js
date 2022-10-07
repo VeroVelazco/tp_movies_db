@@ -14,10 +14,11 @@ app.set('views', path.resolve(__dirname, './views'));
 app.set('view engine', 'ejs');
 
 app.use(express.static(path.resolve(__dirname, '../public')));
+app.use(express.urlencoded({extended: false}));
 
 app.use('/', indexRouter);
-app.use(moviesRoutes);
-app.use(genresRoutes);
-app.use(actorsRoutes);
+app.use('/movies', moviesRoutes);
+app.use('/genres', genresRoutes);
+app.use('/actors', actorsRoutes);
 
 app.listen('3001', () => console.log('Servidor corriendo en el puerto 3001'));

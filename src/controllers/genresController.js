@@ -4,7 +4,7 @@ module.exports = {
     list : (req,res) => {
         db.Genre.findAll()
         .then((genres) => {
-            return res.render('genresList.ejs',{genres})
+            return res.render('genresList',{genres})
         })
         .catch(error => console.log(error))
     },
@@ -17,7 +17,8 @@ module.exports = {
     detail : (req,res) => {
         db.Genre.findByPk(req.params.id)
             .then(genre => {
-                res.render('genresDetail.ejs',{genre});
+                res.render('genresDetail',{genre});
             });
     }
+    
 }

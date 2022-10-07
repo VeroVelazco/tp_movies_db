@@ -10,8 +10,7 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement : true
         },
         title : {
-            type : dataTypes.STRING(500),
-            allowNull : false,
+            type : dataTypes.STRING,
         },
         rating : {
             type : dataTypes.DECIMAL(3,1).UNSIGNED,
@@ -44,6 +43,14 @@ module.exports = (sequelize, dataTypes) => {
        underscored : true,
     }
     const Movie = sequelize.define(alias, cols, config)
+
+    Movie.associate = (models) => {
+        Movie.belongsTo(models.Genre,{
+            as : 'genre',
+            foreigKey : 'genre_id'
+        })
+    }
+
 
     return Movie
 }

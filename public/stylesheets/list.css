@@ -1,0 +1,35 @@
+.list_main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+}
+.list_container {
+    width: 100%;
+}
+.movie_box{
+    background-color: #67656569;
+}
+
+.list_peliculas{
+    width: 80%;
+    margin:auto;
+    justify-content: center;
+}
+.list_peliculas li{
+    margin: 20px;
+}
+.list_peliculas li a{
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+    font-size: 25px;
+    font-family: system-ui;
+    font-variant-caps: all-small-caps;
+    
+}
+.list_peliculas a:hover{
+    border-bottom: 5px solid #eab64f ;
+    background: rgba(110, 110, 110, 0.432);
+    color: #eab64f ;
+}
