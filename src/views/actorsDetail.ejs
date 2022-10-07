@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
-    <%- include('./partials/head', {title: 'Actores'}) %> 
-
-  
-<body>
-    <%- include('partials/header') %>    
-    <h1><%= actors.first_name %> </h1>
-    <br>
-    <p>NOMBRE: <%= actors.first_name %> </p>
-    <p>APELLIDO: <%= actors.last_name %> </p>
-
-</body>
+  <%- include('./partials/head', {title: 'Actores'}) %>
+  <body>
+    <%- include('partials/header') %>
+    <main class="detail_main">
+      <section class="detail_container">
+        <h1 class="titulo_general"><%= actors.first_name %></h1>
+        <div class="cartelito">
+          <p>NOMBRE: <%= actors.first_name %></p>
+          <p>APELLIDO: <%= actors.last_name %></p>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>

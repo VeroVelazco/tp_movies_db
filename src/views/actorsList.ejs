@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('./partials/head', {title: 'Actores'}) %> 
+  <%- include('./partials/head', {title: 'Actores'}) %>
 
-<body>
-    <%- include('partials/header') %> 
-    <h1>LISTADO DE ACTORES</h1>
-    <ul>
-        <% for( let i = 0; i < actors.length; i++ ) { %>
-        <li>
-            <a href="/actors/actors/detail/<%= actors[i].id %>"><%= actors[i].first_name %> <%= actors[i].last_name %></a>
-        </li>
-        <% } %>
-
-    </ul>
-</body>
-
+  <body>
+    <%- include('partials/header') %>
+    <main class="actors_list_main">
+      <section class="actors_list_container">
+        <h1 class="titulo_general">LISTADO DE ACTORES</h1>
+        <div class="list_peliculas">
+          <ul class="movie_box">
+            <% for( let i = 0; i < actors.length; i++ ) { %>
+            <li>
+              <a href="/actors/actors/detail/<%= actors[i].id %>"
+                ><%= actors[i].first_name %> <%= actors[i].last_name %></a
+              >
+            </li>
+            <% } %>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>

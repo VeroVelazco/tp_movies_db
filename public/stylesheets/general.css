@@ -2,7 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  
+
 }
 
 body {
@@ -31,7 +31,8 @@ img {
 figure {
   width: 20%;
 }
-.titulo_general{
+
+.titulo_general {
 
   width: 100%;
   text-align: center;
@@ -44,50 +45,95 @@ figure {
 
 /* botones */
 .button_general {
-  margin-top:20px;
+  margin-top: 20px;
   border: solid 2px #e73a58;
   background: transparent;
-  width: 30%; 
+  width: 30%;
   text-align: center;
   padding: 10px;
   font-size: 20px;
-  color: #e73a58 ;
+  color: #e73a58;
 }
+
 .button_general:hover {
   border: solid 5px #fff;
-  color: #fff ;
-} 
+  color: #fff;
+}
 
-/* enlaces */
+
 
 
 /* formularios */
-.formulario_general{
-  display: flex;
-  flex-direction: column;
-  margin: auto;
+.form_gral-cont {
+
+  background-color: #6c69692e;
   width: 80%;
+  font-size: 14px;
   margin: 30px;
   padding: 30px;
-  flex-wrap: wrap;
-  align-content: stretch;
-  justify-content: center;
-  align-items: stretch;
 }
- 
 
-.formulario_general input{
-  width: 80%;
+
+.form_gral input {
+  
+  background-color: #4645439c; 
+  width: 50%;
+  border-radius: 30px;
+  display: inline-block;
+  border: none;
+  font-size: 13.3333px;
+  margin: 0px 0px 30px;
+  padding: 10px;
+
+
+}
+
+.form_gral input::placeholder {
+  color: #fff;
+  font-size: 15px;
+
+}
+
+.form_gral-cont select {
+  width: 30%;
   height: 41px;
   margin-bottom: 30px;
   border: none;
   border-radius: 30px;
   padding: 10px;
   background-color: #4645439c;
-}
-.formulario_general input::placeholder{
-  color: #fff;
-  font-size: 15px;
-  
+
 }
 
+.form_gral-cont select::placeholder {
+  color: #fff;
+  font-size: 15px;
+
+}
+
+.form_gral-mb50 input {
+  display: flex;
+  display: inline-block;
+  flex-direction: row;
+  width: 30%;
+  height: 41px;
+  margin-bottom: 30px;
+  border: none;
+  border-radius: 30px;
+  padding: 10px;
+  background-color: #4645439c;
+  border: soliud red 2px;
+  /* background-color:#464543 ;
+  border-radius: 30px ;
+  display: inline-block ;
+  font-family: Arial ;
+  font-size: 13.3333px ;
+  margin: 0px 0px 30px ;
+  padding: 10px; */
+}
+
+.form_gral-mb50 input::placeholder {
+  color: #fff;
+  font-size: 15px;
+
+}

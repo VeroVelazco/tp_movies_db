@@ -60,11 +60,11 @@ module.exports = {
                 awards : +awards,
                 release_date : release_date,
                 length : +length,
-                genre_id : genre_id
+                genre_id 
             })
             .then(movie => {
                 console.log(movie)
-                return res.render("/movies/detail/"+ movie.id)
+                return res.redirect('/movies/detail/'+movie.id)
             })
             
         }else {

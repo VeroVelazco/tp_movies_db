@@ -3,19 +3,22 @@
     <%- include('./partials/head', {title: 'Detalle de la Pélicula'}) %> 
 <body>
     <%- include('partials/header') %> 
-    <h1><%= movie.title %> </h1>    
-    <br>
-    <p>RATING: <%= movie.rating %> </p>
-    <p>PREMIOS: <%= movie.awards %> </p>
-    <p>DURACIÓN: <%= movie.length + ' min'%> </p>
-    <p>FECHA DE REALIZACIÓN: <%= movie.release_date %> </p>
-    
-
-    <br>
-    <section>
-        <a href="/movies/edit/<%= movie.id %>"> Editar película</a>
-        <a href="/movies/delete/<%= movie.id %>"> Eliminar película</a>
-    </section>
-
+    <main class="detail_main">
+        <section class="detail_container">
+            <h1 class="titulo_general"><%= movie.title %> </h1>    
+            <div class="cartelito">
+                <p>RATING: <%= movie.rating %> </p>
+                <p>PREMIOS: <%= movie.awards %> </p>
+                <p>DURACIÓN: <%= movie.length + ' min'%> </p>
+                <p>FECHA DE REALIZACIÓN: <%= movie.release_date %> </p>
+            </div>
+            <div class="button_general" >
+                <a href="/movies/edit/<%= movie.id %>"> Editar película</a>
+            </div>
+            <div class="button_general" >
+                <a href="/movies/delete/<%= movie.id %>"> Eliminar película</a>
+            </div>
+        </section>
+    </main>
 </body>
 </html>

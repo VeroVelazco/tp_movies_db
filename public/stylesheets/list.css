@@ -29,7 +29,7 @@
     
 }
 .list_peliculas a:hover{
-    border-bottom: 5px solid #eab64f ;
+    border-bottom: 5px solid #e73a58 ;
     background: rgba(110, 110, 110, 0.432);
-    color: #eab64f ;
+    color: #e73a58 ;
 }

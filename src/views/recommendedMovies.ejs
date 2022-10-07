@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('./partials/head', {title: 'Por Posición'}) %> 
-<body>
-    <%- include('partials/header') %> 
-    <h1>PEÍCULAS ORDENADAS POR POSICIÓN</h1>
-    <ul>
-        <% for( let i = 0; i < movies.length; i++ ) { %>
-        <li>
-            <a href="/movies/detail/<%=movies[i].id%>"><%= movies[i].title %> </a> <br>
-            <%= 'RATING: ' + movies[i].rating %> 
-        </li>
-        <% } %>
-        
-    </ul>
-</body>
+  <%- include('./partials/head', {title: 'Por Posición'}) %>
+  <body>
+    <%- include('partials/header') %>
+    <main class="reco_main">
+      <section class="reco_container">
+        <h1 class="titulo_general">PEÍCULAS ORDENADAS POR POSICIÓN</h1>
+        <div class="list_peliculas">
+          <ul>
+            <% for( let i = 0; i < movie.length; i++ ) { %>
+            <li>
+              <a href="/movies/detail/<%=movie[i].id%>"
+                ><%= movie[i].title %>
+              </a>
+              <br />
+              <%= 'RATING: ' + movie[i].rating %>
+            </li>
+            <% } %>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
