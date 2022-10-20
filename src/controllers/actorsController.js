@@ -17,7 +17,7 @@ module.exports = {
     detail : (req,res) => {
         db.Actors.findByPk(req.params.id)
             .then(actors => {
-                res.render('actorsDetail.ejs',{actors});
+                res.render('actorsDetail',{actors});
             });
     }
     

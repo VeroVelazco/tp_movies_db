@@ -1,0 +1,19 @@
+.cartelito {
+    background-color: #39353569;
+    width: 50%;
+    margin: auto;
+    padding: 30px;
+
+}
+
+.cartelito p {
+    color: #fff;
+    font-size: 20px;
+    margin: 20px;
+}
+
+.button_general a{
+    margin: auto;
+    display:inline ;
+    text-align: center
+}

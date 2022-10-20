@@ -1,0 +1,88 @@
+
+ header{
+  background-image: linear-gradient(to top, #30303300, #e3d6d642);   
+}
+.header_logo{
+  margin-left: 20px;
+ 
+}
+.header_container{
+  display: flex;
+  flex-wrap: wrap;
+    
+}
+.selectores_generales{
+  display: inline-block;
+  margin: 25px 0;
+  
+}
+.selectores_generales a {
+  color:  #fff ;
+  font-size: 13px;
+  font-weight: 400;
+  text-decoration: none;
+  margin: 28px;
+}
+.selectores_generales a:hover {
+  font-size: 15px;
+  color: #e73a58;
+}
+
+@media(min-width: 768px){
+  
+  .header_container{
+    /* box-shadow: 20px 20px 20px 10px #48529944; */
+    display: flex;
+    flex-wrap: wrap;
+      
+  }
+  .selectores_generales{
+    
+    margin: 15px 0;
+    
+  }
+  .selectores_generales a {
+    
+    font-size: 10px;
+   
+  }
+  .selectores_generales a:hover {
+    
+    
+    font-size: 13px;
+    
+  }
+}
+
+@media(min-width: 1024px){
+  header{
+    background-image: linear-gradient(to top, #30303300, #e3d6d642);   
+  }
+  .header_logo{
+    margin-left: 20px;
+   
+  }
+  .header_container{
+    display: flex;
+    flex-wrap: wrap;
+    width:100%;
+      
+  }
+  .selectores_generales{
+    display: inline-block;
+    margin: 25px 0;
+    
+  }
+  .selectores_generales a {
+    color:  #fff;
+    font-size: 13px;
+    font-weight: 400;
+    text-decoration: none;
+    margin: 28px;
+  }
+  .selectores_generales a:hover {
+    Font-size: 15px;
+    color: #e73a58 ;
+  }
+}
+

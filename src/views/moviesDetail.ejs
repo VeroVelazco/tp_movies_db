@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= movies.title %> </title>
-    <link rel='stylesheet' href='/css/style.css' />
-
-</head>
+    <%- include('./partials/head', {title: 'Detalle de la Pélicula'}) %> 
 <body>
-    <figure>
-        <img src="/img/logo-DH.png" alt="Logo Digital House">
-    </figure>
-    <h1><%= movies.title %> </h1>    
-    <br>
-    <p>RATING: <%= movies.rating %> </p>
-    <p>AWARDS: <%= movies.awards %> </p>
-    <p>LENGTH: <%= movies.length + ' min'%> </p>
-    <p>RELEASE DATE: <%= movies.release_date %> </p>
-
+    <%- include('partials/header') %> 
+    <main class="detail_main">
+        <section class="detail_container">
+            <h1 class="titulo_general"><%= movie.title %> </h1>    
+            <div class="cartelito">
+                <p>RATING: <%= movie.rating %> </p>
+                <p>PREMIOS: <%= movie.awards %> </p>
+                <p>DURACIÓN: <%= movie.length + ' min'%> </p>
+                <p>FECHA DE REALIZACIÓN: <%= movie.release_date %> </p>
+            </div>
+            <div class="button_general" >
+                <a href="/movies/edit/<%= movie.id %>"> Editar película</a>
+            </div>
+            <div class="button_general" >
+                <a href="/movies/delete/<%= movie.id %>"> Eliminar película</a>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
