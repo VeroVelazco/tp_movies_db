@@ -15,8 +15,15 @@ module.exports = {
 
     },
     detail : (req,res) => {
-        db.Genre.findByPk(req.params.id)
+        db.Genre.findByPk(req.params.id,{
+            include: [
+                {
+                    association : 'movies'
+                }
+            ]
+        })
             .then(genre => {
+                // return res.send(genre)
                 res.render('genresDetail',{genre});
             });
     }

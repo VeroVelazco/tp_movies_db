@@ -13,7 +13,7 @@ body {
 }
 
 a {
-  color: #e73a58;
+  color: #fff; 
   font-size: 20px;
   font-weight: 400;
   text-decoration: none;
@@ -22,6 +22,7 @@ a {
 
 li {
   list-style: none;
+        
 }
 
 img {

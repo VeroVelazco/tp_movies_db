@@ -22,16 +22,27 @@ module.exports = (sequelize, dataTypes) => {
             allowNull : false, 
             defaultValue: 1,
         }
+        
 
     }
 
     const config = {
         tableName : 'genres' ,
-        timestamp : true, /* false si no existe*/
-        underscored : true,
+        timestamps: true,
+        createdAt: 'created_at',
+        updatedAt: 'updated_at',
+        deletedAt: false
     }
     const Genre = sequelize.define(alias, cols, config)
 
+
+    //  asocio la fk de generos con peliculas
+    Genre.associate = (models) => {
+        Genre.hasMany(models.Movie,{
+            as : 'movies',
+            foreignKey : 'genre_id'
+        })
+    }
     
 
     return Genre

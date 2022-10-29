@@ -30,14 +30,14 @@
             </div>
             <div>
             
-            <select name="genre_id" id="genre_id">
-                <option value="" hidden selected>Seleccione un género</option>
-                <% genres.forEach(genre => { %> 
-                    <option value="<%= genre.id %>"<%= genre.name %>></option>
-                    
-                <% }) %>
-                 
-            </select>
+               
+                <select name="genre_id" id="" required>
+                    <option value="" disabled selected>- Selecciona el género- </option>
+                    <% genres.forEach(genre => { %>
+                    <option value="<%= genre.id %>"><%= genre.name %></option>
+                    <% }); %>
+                </select>
+              
             <small style="color: red"><%= locals.errors && errors.genre_id ? errors.genre_id.msg : null %></small>
             </div>
            

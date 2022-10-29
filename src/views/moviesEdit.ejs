@@ -18,7 +18,12 @@
             <p><input type="date" name="release_date" id="release_date" value="<%= moment(Movie.release_date).format('YYYY-MM-DD') %>" required></p>
             <label for="length">Length </label>
             <p><input type="number" name="length" id="" value="<%= Movie.length %>" required></p>
-           
+            <select name="genre_id" id="" required>
+                <option value="" disabled selected>- Selecciona el género- </option>
+                <% genres.forEach(genre => { %>
+                <option value="<%= genre.id %>"><%= genre.name %></option>
+                <% }); %>
+            </select>
             <br>
             <p> <button class="botonAgregar" type="submit">Actualizar</button>
         

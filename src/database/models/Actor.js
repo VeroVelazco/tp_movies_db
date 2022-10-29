@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes) => {
 
-    const alias = "Actors";
+    const alias = "Actor";
 
     const cols = {
         id : {
@@ -35,7 +35,22 @@ module.exports = (sequelize, dataTypes) => {
         timestamp : true,
         underscored : true,
     }
-    const Actor = sequelize.define(alias, cols, config)
+    const Actor = sequelize.define(alias, cols, config);
+
+    // traigo la asosiacion creada en Movie
+
+    Actor.associate = (models) => {
+        Actor.belongsToMany(models.Movie,{
+            // creo asociacion entre películas y actores
+            as : 'movies',
+            // tabla pivot
+            through : "actor_movie",
+            // hace referencia donde estot parado
+            foreignKey : 'actor_id',
+            // hace referencia a la otra tabla
+            otherKey : 'movie_id'
+        })
+    }
 
     return Actor
 }

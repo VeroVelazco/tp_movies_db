@@ -36,18 +36,34 @@ module.exports = (sequelize, dataTypes) => {
             defaultValue : null
         }
     }
-
     const config = {
-       tableName : 'movies' ,
-       timestamp : true,
-       underscored : true,
+        tableName : 'movies' ,
+        timestamps: true,
+        createdAt: 'created_at',
+        updatedAt: 'updated_at',
+        deletedAt: false
     }
-    const Movie = sequelize.define(alias, cols, config)
 
+    const Movie = sequelize.define(alias, cols, config)
+    // asociacion que vincula películas con género.
     Movie.associate = (models) => {
         Movie.belongsTo(models.Genre,{
             as : 'genre',
-            foreigKey : 'genre_id'
+            foreignKey : 'genre_id'
+        })
+   
+        // asociacion que vincula películas con actores.
+        // relación de muchos a muchos.
+  
+        Movie.belongsToMany(models.Actor,{
+            // creo asociacion entre películas y actores
+            as : 'actors',
+            // tabla pivot
+            through : 'actor_movie',
+            // hace referencia donde estoy parado
+            foreignKey : 'movie_id',
+            // hace referencia a la otra tabla
+            otherKey : 'actor_id'
         })
     }
 
