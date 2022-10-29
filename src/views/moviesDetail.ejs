@@ -11,7 +11,29 @@
                 <p>PREMIOS: <%= movie.awards %> </p>
                 <p>DURACIÓN: <%= movie.length + ' min'%> </p>
                 <p>FECHA DE REALIZACIÓN: <%= movie.release_date %> </p>
+              
+
+                <!-- llevo los generos a movieDetail -->
+                <% if (movie.genre) { %>
+                    <p> GENERO: <a href="/genres/genres/detail/<%= movie.genre.id %> "> <%= movie.genre.name %></a> </p>
+                <% }else{ %>
+                    <p> La película no tiene género</p>
+                <% } %>
+
+                <h4>Actores</h4>
+                    <% if (movie.actors.length) { %>
+                        <ul>
+                            <% movie.actors.forEach(actor => { %>
+                             <li><a href="/actors/detail/<%= actor.id %>"><%= actor.first_name %><%= actor.last_name %>  </a></li>
+                            <% }) %>
+                        </ul>
+                    <% }else{ %>
+                        <p>La película no tiene actores registrados :</p>
+                    <% } %>
+                
             </div>
+            <!-- >>>>>>>>>>>>>>>>>>>> -->
+            
             <div class="button_general" >
                 <a href="/movies/edit/<%= movie.id %>"> Editar película</a>
             </div>

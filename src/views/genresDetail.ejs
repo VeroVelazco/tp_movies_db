@@ -9,6 +9,13 @@
         <div class="cartelito">
           <p>NAME: <%= genre.name %></p>
           <p>RANKIG: <%= genre.ranking %></p>
+          <p> PELÍCULAS:</p>
+          <ul>
+            <!-- recorro las películas,  -->
+            <% genre.movies.forEach(movie => { %>
+             <li><a href="/movies/detail/<%= movie.id %>"><%= movie.title %></a></li>
+            <% }) %>
+          </ul>
         </div>
       </section>
     </main>

@@ -32,20 +32,37 @@ module.exports = {
 
     },
     detail : (req,res) => {
-        db.Movie.findByPk(req.params.id)
-            .then(movie => res.render('moviesDetail',{movie}))
-            .catch(error => console.log(error))
+        db.Movie.findByPk(req.params.id,{
+            // asocio los Fk de movies cn genre_id
+            //  trae las películas con sus géneros y sus actores
+            include : [
+                {
+                    association: 'genre' 
+                },
+                {
+                    association: 'actors'
+                }
+            ]
+
+        })
+        .then(movie => {
+            
+            return res.render('moviesDetail',{movie})
+        })
+        .catch(error => console.log(error))
     },
-    //Aqui debemos modificar y completar lo necesario para trabajar con el CRUD
+    //cargamos las peliculas
     add:  (req, res) => {
         db.Genre.findAll({ // de la base de datos me traigo genre
-            order : ['name'] // ordenado alfabeticamente
+            order : ['name'] // ordenado alfabéticamente
         }) 
         .then(genres => res.render('moviesAdd',{ // recibo todos los generos y renderizo la vista
             genres
         }))  
         .catch(error => console.log(error));
     },
+
+    // creamos peliculas
     create:  (req, res) =>{
         const errors = validationResult(req);
         
@@ -75,6 +92,7 @@ module.exports = {
         }
          
     },
+    // edito peliculas
     edit :  (req, res)=> {
         let genres = db.Genre.findAll({ 
             order : ['name'],
@@ -93,10 +111,12 @@ module.exports = {
     },
     update: function (req,res) {
         db.Movie.update(
-        {...req.body,
+        {
+            ...req.body,
             title : req.body.title.trim()
         },
-        {where : {id: req.params.id}
+        {
+            where : {id: req.params.id}
         })
         .then(response =>{
             console.log(response);
@@ -104,6 +124,7 @@ module.exports = {
         })
         .catch(error => console.log(error))
     },
+    // borrar pelicula
     delete: function (req, res) {
         db.Movie.findByPk(req.params.id)
             .then(movie => {
